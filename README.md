@@ -19,7 +19,7 @@ npm run validate    # runs test, integration, and lint.
 ```
 __Note:__ `integration` and `validate` require a valid `.env` file. Details on how to create this are below.
 
-## Quick Example
+## Usage
 ```js
 'use strict'
 
@@ -41,7 +41,7 @@ const qwen = Qwen(Config.qwen)
   })
 ```
 
-## Options
+### Options
 ```js
 {
   // A tag that can be used to identify and group services
