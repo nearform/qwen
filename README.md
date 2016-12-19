@@ -31,14 +31,14 @@ const qwen = Qwen(Config.qwen)
   .use(require('./service-two'), Config.serviceTwo)
   .use(require('./service-three'), Config.serviceThree)
 
-  .start((err) => {
-    if (!err) {
-      qwen.log.error(err)
-      process.exit(1)
-    }
-    
-    qwen.info.log('server started')
-  })
+qwen.start((err) => {
+  if (!err) {
+    qwen.log.error(err)
+    process.exit(1)
+  }
+  
+  qwen.info.log('server started')
+})
 ```
 
 ### Options
@@ -46,6 +46,11 @@ const qwen = Qwen(Config.qwen)
 {
   // A tag that can be used to identify and group services
   tag: 'untagged',
+
+  // A collection of schemas for validating published and subscribes.
+  schema: {
+
+  },
   
   // Options for rabbitmq.
   rabbit: {
