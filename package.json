@@ -1,0 +1,45 @@
+{
+  "name": "qwen",
+  "version": "0.0.1",
+  "description": "A simple abstraction around AMQP to hide away the icky bits.",
+  "main": "./lib/qwen.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node lib/start.js",
+    "test": "istanbul cover tape test/unit/*test.js | tap-spec",
+    "integration": "istanbul cover tape test/integration/*test.js | tap-spec",
+    "coverage": "open ./coverage/lcov-report/index.html",
+    "lint": "standard | snazzy",
+    "validate": "npm run test && npm run integration && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nearform/qwen.git"
+  },
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "amqplib": "^0.5.1",
+    "boot-in-the-arse": "^0.3.0",
+    "fast-json-parse": "^1.0.2",
+    "fast-safe-stringify": "^1.1.3",
+    "fastq": "^1.4.1",
+    "hyperid": "^1.1.0",
+    "joi": "^10.0.6",
+    "pino": "^3.0.5"
+  },
+  "devDependencies": {
+    "istanbul": "^1.0.0-alpha.2",
+    "pre-commit": "^1.2.2",
+    "proxyquire": "^1.7.10",
+    "snazzy": "^5.0.0",
+    "standard": "^8.6.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
+  },
+  "pre-commit": [
+    "validate"
+  ],
+  "engines": {
+    "node": ">=6.0.0"
+  }
+}
